@@ -1,0 +1,47 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build",
+        "buildCommand": "npm run vercel-build",
+        "installCommand": "npm install --legacy-peer-deps && cd frontend && npm install --legacy-peer-deps react-scripts@5.0.1"
+      }
+    }
+  ],
+  "routes": [
+    { 
+      "src": "/static/(.*)", 
+      "dest": "/static/$1" 
+    },
+    { 
+      "src": "/images/(.*)", 
+      "dest": "/images/$1" 
+    },
+    { 
+      "src": "/favicon.ico", 
+      "dest": "/favicon.ico" 
+    },
+    { 
+      "src": "/manifest.json", 
+      "dest": "/manifest.json" 
+    },
+    { 
+      "src": "/logo192.png", 
+      "dest": "/logo192.png" 
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "REACT_APP_API_URL": "https://express-backend-7m2c.onrender.com",
+    "CI": "false",
+    "DISABLE_ESLINT_PLUGIN": "true",
+    "SKIP_PREFLIGHT_CHECK": "true"
+  }
+} 
