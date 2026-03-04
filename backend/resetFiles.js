@@ -6,7 +6,7 @@ const File = require('./models/File');
 // Connect to MongoDB
 async function main() {
   try {
-    await mongoose.connect('mongodb+srv://amritsinghco23d2_db_user:lh62wtdDr3xPHUHV@cluster0.ccfxhey.mongodb.net/');
+    await mongoose.connect(process.env.MONGODB_URI);
     console.log('Connected to MongoDB');
     
     // Path to uploads directory
