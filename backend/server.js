@@ -17,9 +17,10 @@ const app = express();
 // CORS configuration - allow all origins in production for testing
 // Add more specific patterns for Vercel domains
 const allowedOrigins = [
-  'https://datavizpro-kn4junf9m-aaditya-desais-projects.vercel.app',
+  'https://datavizpro.onrender.com',
   'https://datavizpro-mbgolxqmu7-aaditya-desais-projects.vercel.app', // Current domain
   'https://datavizpro-seven.vercel.app',
+  'https://data-viz-pro-nine.vercel.app/',
   'https://datavizpro-q26miqz7o-aaditya-desais-projects.vercel.app', // URL from the image
   'http://localhost:3000'
 ];
