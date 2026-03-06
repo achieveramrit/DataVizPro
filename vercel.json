@@ -1,47 +1,6 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "frontend/build",
-        "buildCommand": "cd frontend && npm run build",
-        "installCommand": "cd frontend && npm install --legacy-peer-deps"
-      }
-    }
-  ],
-  "routes": [
-    { 
-      "src": "/static/(.*)", 
-      "dest": "/static/$1" 
-    },
-    { 
-      "src": "/images/(.*)", 
-      "dest": "/images/$1" 
-    },
-    { 
-      "src": "/favicon.ico", 
-      "dest": "/favicon.ico" 
-    },
-    { 
-      "src": "/manifest.json", 
-      "dest": "/manifest.json" 
-    },
-    { 
-      "src": "/logo192.png", 
-      "dest": "/logo192.png" 
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ],
-  "env": {
-    "NODE_ENV": "production",
-    "REACT_APP_API_URL": "https://express-backend-7m2c.onrender.com",
-    "CI": "false",
-    "DISABLE_ESLINT_PLUGIN": "true",
-    "SKIP_PREFLIGHT_CHECK": "true"
-  }
+  "buildCommand": "cd frontend && npm install --legacy-peer-deps && npm run build",
+  "outputDirectory": "frontend/build",
+  "public": "frontend/build"
 } 
